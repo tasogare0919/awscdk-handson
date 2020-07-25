@@ -24,7 +24,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
         output: sourceArtifact,
         oauthToken: SecretValue.secretsManager('github-token'),
         owner: 'tasogare0919',
-        repo: 'https://github.com/tasogare0919/awscdk-handson',
+        repo: 'awscdk-handson',
         trigger: codepipeline_actions.GitHubTrigger.POLL,
       }),
 
@@ -34,8 +34,8 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
          cloudAssemblyArtifact,
 
          // We need a build step to compile the TypeScript Lambda
-          buildCommand: 'npm run build'
-        }),
+         buildCommand: 'npm run build'
+       }),
     });
 
     // This is where we add the application stages
